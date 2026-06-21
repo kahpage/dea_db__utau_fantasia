@@ -108,7 +108,12 @@ if __name__ == "__main__":
             ),
         ]
         event = Event(
-            aliases=["UTAU Fantasia", f"UTAU Fantasia {i}"],
+            aliases=[
+                "UTAU Fantasia",
+                f"UTAU Fantasia{i}",
+                f"ウタファン{i}",
+                f"UTAfan{i}",
+            ],
             dates="2012.09.23",
             circles=[],
             media=media_,
@@ -132,6 +137,65 @@ if __name__ == "__main__":
         event.circles = retrieve_circles(event_name)
         events.append(event)
 
+    i = 2  # ==== utau_fantasia2 ====
+    if i in active_events:
+        # event_name = f"utau_fantasia{i}"
+        print(f"Processing {event_name} ...")
+
+        media_ = [
+            Medium(
+                "02_utaufan2.gif",
+                [
+                    Source(
+                        "https://web.archive.org/web/20160829041202/http://vocaloid-fantasia.com/utafan02.htm",
+                        (RT.Reliable, OT.Official),
+                    )
+                ],
+            ),
+            Medium(
+                "02_haichi.jpg",
+                [
+                    Source(
+                        "https://web.archive.org/web/20131207042859/http://vocaloid-fantasia.com/cir-iciran04.htm",
+                        (RT.Reliable, OT.Official),
+                    )
+                ],
+            ),
+        ]
+        locations = [
+            Location(
+                iframe_url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41280.738025225925!2d139.63619093655805!3d35.438584145120856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185cfc879b30db%3A0x8d76dbf7eaf7b911!2sYokohama%20Sanbo%20Hall%20Marineria!5e0!3m2!1sen!2sfr!4v1782062083547!5m2!1sen!2sfr",
+                description="横浜産貿ホール　マリネリア全面",
+                sources=[
+                    Source(
+                        "https://web.archive.org/web/20260207074257/https://vocaloid-fantasia.com/about04.htm",
+                        (ReliabilityTypes.Reliable, OriginTypes.Official),
+                    )
+                ],
+            ),
+        ]
+        event = Event(
+            aliases=[f"UTAU Fantasia {i}", f"ウタファン {i}", f"UTAfan {i}"],
+            dates="2013.09.15",
+            circles=[],
+            media=media_,
+            sources=[
+                Source(
+                    "Date: https://web.archive.org/web/20150118022001/http://vocaloid-fantasia.com/utafan02.htm",
+                    (RT.Reliable, OT.Official),
+                ),
+                Source("Participating circles: https://web.archive.org/web/20251228214217/https://vocaloid-fantasia.com/cir-iciran04.htm", (RT.Reliable, OT.Official)),
+            ],
+            locations=locations,
+            description="Simultaneous with VOCALOID Fantasia4 and この声届け、月までも.\nFor the circle list, please refer to the VOCALOID Fantasia4 circle list.",
+            comments="No source was found to separate the circle lists from VOCALOID Fantasia4.",
+            last_edited="2026.06.21",
+        )
+
+        # Retrieve circles
+        # event.circles = retrieve_circles(event_name)
+        events.append(event)
+
     # i =   # ==== utau_fantasia ====
     # if i in active_events:
     #     # event_name = f"utau_fantasia{i}"
@@ -153,7 +217,7 @@ if __name__ == "__main__":
     #         # ),
     #     ]
     #     event = Event(
-    #         aliases=[f"UTAU Fantasia {i}"],
+    #         aliases=[f"UTAU Fantasia {i}", f"ウタファン {i}", f"UTAfan {i}"],
     #         dates="",
     #         circles=[],
     #         media=media_,
@@ -170,6 +234,7 @@ if __name__ == "__main__":
     #     # Retrieve circles
     #     # event.circles = retrieve_circles(event_name)
     #     events.append(event)
+
     # ==== event group ====
     media = [
         # Medium("",
@@ -182,13 +247,19 @@ if __name__ == "__main__":
     ]
 
     event_group = EventGroup(
-        aliases=[
-            # "",
-        ],
+        aliases=["UTAU Fantasia", "UTAfanウタファン"],
         events=events,
         media=media,
         links=links,
         sources=[
+            Source(
+                'Alias "UTAfan": https://x.com/vocafan0905/status/361447306106634240',
+                (ReliabilityTypes.Reliable, OriginTypes.Official),
+            ),
+            Source(
+                'Alias "ウタファン": https://x.com/vocafan0905/status/372675814363365377',
+                (ReliabilityTypes.Reliable, OriginTypes.Official),
+            ),
             # Source(
             #     "",
             #     (ReliabilityTypes.Reliable, OriginTypes.Official),
@@ -196,7 +267,7 @@ if __name__ == "__main__":
         ],
         comments=None,
         description=None,
-        # last_edited="",
+        last_edited="2026.06.21",
     )
 
     print(f"Saving {Path(__file__).stem} database...")
