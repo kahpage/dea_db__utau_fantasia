@@ -213,16 +213,19 @@ if __name__ == "__main__":
     #         # Medium("", [Source("", (RT.Reliable, OT.Official))]),
     #     ]
     #     locations = [
-    #         # Location(
-    #         #     iframe_url="",
-    #         #     description="",
-    #         #     sources=[
-    #         #         Source(
-    #         #             "",
-    #         #             (ReliabilityTypes.Reliable, OriginTypes.Official),
-    #         #         )
-    #         #     ],
-    #         # ),
+    #             coordinates=(,),
+    #             address="",
+    #             description="",
+    #             sources=[
+    #                 Source(
+    #                     "",
+    #                     (ReliabilityTypes.Reliable, OriginTypes.Official),
+    #                 )
+    #             ],
+    #             comments=None,
+    #             imageUrl="",
+    #             url="",
+    #         ),
     #     ]
     #     event = Event(
     #         aliases=[f"UTAU Fantasia {i}", f"ウタファン {i}", f"UTAfan {i}"],
